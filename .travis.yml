@@ -15,11 +15,10 @@ after_success:
   - docker build -t dimashok/multi-nginx ./nginx
   - docker build -t dimashok/multi-server ./server
   - docker build -t dimashok/multi-worker ./worker
-
-# Log in to the docker CLI
-- echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
-# Take those images and push them to docker hub
-- docker push dimashok/multi-client
-- docker push dimashok/multi-nginx
-- docker push dimashok/multi-server
-- docker push dimashok/multi-worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push dimashok/multi-client
+  - docker push dimashok/multi-nginx
+  - docker push dimashok/multi-server
+  - docker push dimashok/multi-worker
