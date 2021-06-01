@@ -23,14 +23,14 @@ after_success:
   - docker push dimashok/multi-server
   - docker push dimashok/multi-worker
 
-  deploy:
-    provider: elasticbeanstalk
-    region: 'us-east-1'
-    app: 'multi-docker'
-    env: 'MultiDocker-env'
-    bucket_name: 'elasticbeanstalk-us-east-1-168937149820'
-    bucket_path: 'docker-multi'
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'multi-docker'
+  env: 'MultiDocker-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-168937149820'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
